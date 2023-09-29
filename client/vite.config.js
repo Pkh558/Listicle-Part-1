@@ -6,9 +6,8 @@ export default defineConfig({
     emptyOutDir: true
   },
   server: {
-    port: 3000,
     proxy: {
-      '/': {
+      '/tips': {
         target: 'http://localhost:3001'
       }
     }

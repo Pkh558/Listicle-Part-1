@@ -1,32 +1,21 @@
 import express from 'express'
-const router = express.Router()
-import tipsData from '../data/tips.js'
 import path from 'path'
+
 import { fileURLToPath } from 'url'
 
+import tipData from '../data/tips.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
+const router = express.Router()
+
 router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../client/public/index.html'));
-});
+  res.status(200).json(tipData)
+})
 
-
-router.get('/tip', (req, res) => {
-    res.json(tipsData);
-});
-
-
-router.get('/tip/:id', (req, res) => {
-    const id = parseInt(req.params.id)
-    const tip = tipsData.find((tip) => tip.id === id)
-
-    if (tip) {
-        res.sendFile(path.join(__dirname, '../../client/public/tip.html'));
-    } else {
-        res.status(404).json({ error: 'Tip not found' })
-    }
+router.get('/:tipId', (req, res) => {
+  res.status(200).sendFile(path.resolve(__dirname, '../../client/public/tip.html'))
 })
 
 export default router

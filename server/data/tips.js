@@ -1,4 +1,4 @@
-const tips = [
+const tipData = [
     {
       id: 1,
       title: "Tip 1: Business Idea",
@@ -23,7 +23,22 @@ const tips = [
       image: "tip3.jpg",
       submittedBy: "Bob Johnson",
     },
+    {
+      id: 4,
+      title: "Tip 4: Business Plan",
+      text: "Create a detailed business plan outlining your goals, strategies, and financial projections.",
+      category: "Planning",
+      image: "tip3.jpg",
+      submittedBy: "Bob Johnson",
+    },
+    {
+      id: 5,
+      title: "Tip 5: Business Plan",
+      text: "Create a detailed business plan outlining your goals, strategies, and financial projections.",
+      category: "Planning",
+      image: "tip3.jpg",
+      submittedBy: "Bob Johnson",
+    },
   ]
   
-  export default tips
-  
+  export default tipData
